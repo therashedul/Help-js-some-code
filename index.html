@@ -7,7 +7,7 @@ jquery.min.js"></script>
 
 
 <body>
-
+    
     <button onclick="getData()">Fetch Data</button>
     <p id="fetchdata"></p>
     <!-- <p>Count numbers: <output id="result"></output></p>
@@ -59,14 +59,51 @@ jquery.min.js"></script>
     <!-- <script>
         document.getElementById("demowidth").innerHTML = navigator.appVersion
     </script>
+    -->
 
 
+    <!-- Destracting 
+    eg: {} = car
+        [] = var1
+        ?  error hendeler
+    -->
+    <script>
+        var car = {
+            name:"bmw",
+            model:"2024",
+            color:"red",
+            newCar:{
+                name:"mercedes",
+                model:"2023",
+                color:"blue"
+            }
+        }
+        let var1 = [1,2,3,[4,100,200,300],5,6,7,8,9,10];
+        var [,a,,[,c,,d],,b] = var1;
+        console.log(a,b);  // output 2 9
+        console.log(a,b,c,d); // output 2 9 100 300
+        // var {name:x,model:y} = car; 
+        // console.log(x,y); // outpur bmw 2024
+        // var {newCar:{model:x}} = car; 
+        // console.log(x); // outpur 2023
+        // console.log(car?.newCar?.name);
+        // output mercedes [if name missing output is undefined]
+    </script>
     <script type="module">
-        import * as test from "./message.js";
-        // alert(txt);
-        console.log(test.demo)
-        console.log(test.mobile)
-    </script> -->
+        // https://www.youtube.com/watch?v=pcN3PFnw2Q0&list=PLHiZ4m8vCp9MFjMRp9EEHWKArbi0wdgXG&index=20
+        // import anyName from "./message.js";  // default value import
+        // import anyName, {notDefault,name, mobile} from "./message.js";  // default value and export value import
+        // import * as test from "./message.js";  // all import call
+        // import { demo, mobile } from "./message.js";  // import demo and mobile
+        // import { demo } from "./message.js";  // only import demo
+        // import { mobile } from "./message.js";  // only import mobile
+        // console.log( name,mobile) // dispaly default value
+            // notDefault(); // dispaly not default function 
+            // anyName(); // dispaly default function
+        //  console.log(test) // dispaly all import call
+        // console.log(test.demo)
+        // console.log(test.mobile)
+    </script>
 
 
 </body>
